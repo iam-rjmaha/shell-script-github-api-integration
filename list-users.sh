@@ -1,5 +1,15 @@
 #!/bin/bash
 
+#########################
+#Author:Mahalakshmi R
+#date:07/06/2024
+#About:Provide list of collaborators who have accesss in the specific repo
+#Prerequestics:Export github username and token
+#Inputs: 2 inputs mandatory one is organization name and repo name
+##########################
+
+helper()
+
 # GitHub API URL
 API_URL="https://api.github.com"
 
@@ -35,6 +45,12 @@ function list_users_with_read_access {
         echo "$collaborators"
     fi
 }
+
+function helper{
+ expected_cmd_args=2
+ if[ $# -ne $expected_cmd_args ]; then
+  echo "please execute the script with required command args"
+  }
 
 # Main script
 
